@@ -1,0 +1,17 @@
+import { JsonPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-basic-page',
+  imports: [JsonPipe, ReactiveFormsModule],
+  templateUrl: './basic-page.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class BasicPage {
+  myForm=new FormGroup({
+    name: new FormControl(''),
+    price: new FormControl(0),
+    inStorage: new FormControl(0),
+  })
+}
